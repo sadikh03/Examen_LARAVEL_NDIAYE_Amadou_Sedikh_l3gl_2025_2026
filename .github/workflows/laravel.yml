@@ -2,9 +2,9 @@ name: ISI Burger CI/CD
 
 on:
   push:
-    branches: [ "lo_makhmadane_burger" ]
+    branches: [ "NDIAYE_AmadouSedikh_burger" ]
   pull_request:
-    branches: [ "lo_makhmadane_burger" ]
+    branches: [ "NDIAYE_AmadouSedikh_burger" ]
 
 jobs:
   build:

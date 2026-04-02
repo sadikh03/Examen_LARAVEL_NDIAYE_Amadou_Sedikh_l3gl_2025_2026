@@ -4,7 +4,7 @@ pipeline {
     environment {
         APP_NAME    = 'isi-burger'
         DOCKER_IMAGE = 'isi-burger:latest'
-        GIT_BRANCH  = 'lo_makhmadane_burger'
+        GIT_BRANCH  = 'NDIAYE_AmadouSedikh_burger'
     }
 
     stages {
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Récupération du code depuis GitHub...'
                 git branch: "${GIT_BRANCH}",
-                    url: 'https://github.com/TON_USERNAME/isi-burger.git'
+                    url: 'https://github.com/sadikh03/Examen_LARAVEL_NDIAYE_Amadou_Sedikh_l3gl_2025_2026.git'
             }
         }
 

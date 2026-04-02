@@ -7,13 +7,20 @@ services:
       dockerfile: Dockerfile
     container_name: isi_burger_app
     ports:
-      - "8080:80"
+      - "8081:80"
     environment:
       - DB_HOST=db
       - DB_PORT=3306
       - DB_DATABASE=isi_burger
       - DB_USERNAME=laravel
       - DB_PASSWORD=secret
+      - MAIL_MAILER=smtp
+      - MAIL_HOST=sandbox.smtp.mailtrap.io
+      - MAIL_PORT=2525
+      - MAIL_USERNAME=823c99a0a24e26
+      - MAIL_PASSWORD=e354b5c28d359b
+      - MAIL_FROM_ADDRESS=no-reply@isiburger.com
+      - MAIL_FROM_NAME=ISI BURGER
     depends_on:
       - db
     volumes:
