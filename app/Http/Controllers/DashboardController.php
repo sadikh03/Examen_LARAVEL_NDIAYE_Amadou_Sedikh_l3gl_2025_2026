@@ -10,7 +10,7 @@ class DashboardController extends Controller
         $user = auth()->user();
 
         if ($user->isGestionnaire()) {
-            return redirect()->route('gestionnaire.commandes.index');
+            return redirect()->route('gestionnaire.statistiques.index');
         }
 
         return redirect()->route('client.catalogue');

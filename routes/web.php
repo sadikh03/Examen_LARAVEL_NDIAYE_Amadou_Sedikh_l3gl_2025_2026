@@ -12,14 +12,6 @@ use Illuminate\Support\Facades\Route;
 // Page d'accueil → catalogue public
 Route::get('/', [BurgerController::class, 'catalogue'])->name('home');
 
-Route::get('/check-config', function () {
-    return [
-        'host' => config('mail.mailers.smtp.host'),
-        'username' => config('mail.mailers.smtp.username'),
-        'env_host' => env('MAIL_HOST'),
-    ];
-});
-
 // Routes authentifiées communes
 Route::middleware('auth')->group(function () {
 
@@ -57,7 +49,7 @@ Route::middleware('auth')->group(function () {
         Route::get('commandes/{commande}', [CommandeController::class, 'maCommande'])->name('commandes.show');
 
         // Facture PDF
-        Route::get('commandes/{commande}/facture', [FactureController::class, 'telecharger'])->name('client.factures.telecharger');
+        Route::get('commandes/{commande}/facture', [FactureController::class, 'telecharger'])->name('factures.telecharger');
     });
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
