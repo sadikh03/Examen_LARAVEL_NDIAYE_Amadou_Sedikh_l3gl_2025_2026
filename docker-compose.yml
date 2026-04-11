@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   app:
     build:
@@ -43,8 +41,26 @@ services:
     networks:
       - isi_network
 
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: isi_burger_jenkins
+    privileged: true
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    volumes:
+      - jenkins_data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - isi_network
+
 volumes:
   db_data:
+  jenkins_data:
 
 networks:
   isi_network:

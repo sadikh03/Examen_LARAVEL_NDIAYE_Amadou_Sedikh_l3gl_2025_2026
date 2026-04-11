@@ -43,7 +43,6 @@ Route::middleware('auth')->group(function () {
     // ===== CLIENT =====
     Route::middleware('client')->prefix('client')->name('client.')->group(function () {
         Route::get('catalogue', [BurgerController::class, 'catalogue'])->name('catalogue');
-        Route::get('burgers/{burger}', [BurgerController::class, 'show'])->name('burgers.show');
         Route::post('commandes', [CommandeController::class, 'store'])->name('commandes.store');
         Route::get('commandes', [CommandeController::class, 'mesCommandes'])->name('commandes.index');
         Route::get('commandes/{commande}', [CommandeController::class, 'maCommande'])->name('commandes.show');
@@ -57,4 +56,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
